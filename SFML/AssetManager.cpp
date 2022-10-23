@@ -1,4 +1,4 @@
-﻿//#include<SFML/Graphics.hpp> // нам это не нужно мы в заголовочном файле это уже объявили
+﻿
 #include "AssetManager.hpp"
  
 namespace Vadym
@@ -9,11 +9,11 @@ namespace Vadym
 
 		if (tex.loadFromFile(fileName))
 		{
-			this->_textures[name] = tex; // использование словаря
+			this->_textures[name] = tex; 
 		}
 	}
 
-	sf::Texture& AssetManager::GetTexture(std::string name) // что это такое???(возвращает текстуру по имени из библиотеки)
+	sf::Texture& AssetManager::GetTexture(std::string name) 
 	{
 		return this->_textures.at(name);
 	}

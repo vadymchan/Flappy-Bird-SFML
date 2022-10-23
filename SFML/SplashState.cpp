@@ -10,7 +10,7 @@
 
 
 
-#include<sstream>//???
+#include<sstream>
 #include"SplashState.hpp"
 #include"MainMenuState.hpp"
 #include"DEFINITIONS.hpp"
@@ -19,7 +19,7 @@
 
 namespace Vadym
 {
-	SplashState::SplashState(GameDataRef data) : _data(data) //???
+	SplashState::SplashState(GameDataRef data) : _data(data) 
 	{
 
 	}
@@ -28,7 +28,7 @@ namespace Vadym
 	{
 		_data->assets.LoadTexture("Splash State Background", SPLASH_SCENE_BACKGROUND_FILEPATH);
 
-		_background.setTexture(this->_data->assets.GetTexture("Splash State Background")); //???
+		_background.setTexture(this->_data->assets.GetTexture("Splash State Background")); 
 
 	}
 
@@ -49,7 +49,7 @@ namespace Vadym
 	{
 		if (_clock.getElapsedTime().asSeconds() > SPLASH_STATE_SHOW_TIME)
 		{
-			_data->machine.AddState(StateRef(new MainMenuState(_data)), true); //???
+			_data->machine.AddState(StateRef(new MainMenuState(_data)), true); 
 		}
 	}
 

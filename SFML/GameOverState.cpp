@@ -48,7 +48,7 @@ namespace Vadym
 		_data->assets.LoadTexture("Gold Medal", GOLD_MEDAL_FILEPATH);
 		_data->assets.LoadTexture("Platinum Medal", PLATINUM_MEDAL_FILEPATH);
 
-		_background.setTexture(this->_data->assets.GetTexture("Game Over Background")); //??? как сразу создается _background и другие(это sf::Sprite в заголовочном файле есть)
+		_background.setTexture(this->_data->assets.GetTexture("Game Over Background")); 
 		_gameOverTitle.setTexture(this->_data->assets.GetTexture("Game Over Title"));
 		_gameOverContainer.setTexture(this->_data->assets.GetTexture("Game Over Body"));
 		_retryButton.setTexture(this->_data->assets.GetTexture("Play Button"));
@@ -61,7 +61,7 @@ namespace Vadym
 		// +_gameOverContainer.getGlobalBounds().height потому что отсчет координат с левого вверхнего угла начинается а нам надо с нижнего 
 			_gameOverContainer.getPosition().y + _gameOverContainer.getGlobalBounds().height + (_retryButton.getGlobalBounds().height * 0.2)); 
 
-		_scoreText.setFont(_data->assets.GetFont("Flappy Font")); //???
+		_scoreText.setFont(_data->assets.GetFont("Flappy Font")); 
 		_scoreText.setString(std::to_string(_score));
 		_scoreText.setCharacterSize(56);
 		_scoreText.setFillColor(sf::Color::White);

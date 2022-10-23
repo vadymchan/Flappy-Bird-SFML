@@ -8,7 +8,7 @@ namespace Vadym
 		if (sf::Mouse::isButtonPressed(button))
 		{
 			sf::IntRect tempRect(object.getPosition().x,object.getPosition().y,
-				object.getGlobalBounds().width, object.getGlobalBounds().height); //???
+				object.getGlobalBounds().width, object.getGlobalBounds().height); 
 			if (tempRect.contains(sf::Mouse::getPosition(window)))
 			{
 				return true;

@@ -5,18 +5,18 @@
 
 namespace Vadym
 {
-	HUD::HUD(GameDataRef data) : _data(data) //из-за этого была ошибка
+	HUD::HUD(GameDataRef data) : _data(data) 
 	{
 		_scoreText.setFont(_data->assets.GetFont("Flappy Font"));
 
 		_scoreText.setString("0");
 
-		_scoreText.setCharacterSize(128); //можно было и в DEFINITIONS объявить
+		_scoreText.setCharacterSize(128); 
 
 		_scoreText.setFillColor(sf::Color::White);
 
 		_scoreText.setOrigin(_scoreText.getGlobalBounds().width / 2,
-			_scoreText.getGlobalBounds().height / 2); //когда увеличивается счет чтобы выглядело нормально
+			_scoreText.getGlobalBounds().height / 2); 
 		_scoreText.setPosition(_data->window.getSize().x / 2, _data->window.getSize().y / 5);
 	}
 

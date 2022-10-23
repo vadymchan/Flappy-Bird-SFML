@@ -4,8 +4,8 @@ namespace Vadym
 {
 	Flash::Flash(GameDataRef data) : _data(data)
 	{
-		_shape = sf::RectangleShape(sf::Vector2f(_data->window.getSize())); //???
-		_shape.setFillColor(sf::Color(255,255,255,0)); //0 -invisible at the begining
+		_shape = sf::RectangleShape(sf::Vector2f(_data->window.getSize())); 
+		_shape.setFillColor(sf::Color(255,255,255,0)); 
 
 		_flashOn = true;
 	}
@@ -14,7 +14,7 @@ namespace Vadym
 	{
 		if (_flashOn)
 		{
-			int alpha = (int)_shape.getFillColor().a + (FLASH_SPEED * dt);//??? зачем int добавлять
+			int alpha = (int)_shape.getFillColor().a + (FLASH_SPEED * dt);
 
 			if (alpha >= 255.0f)
 			{

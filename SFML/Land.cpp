@@ -25,7 +25,7 @@ namespace Vadym
 			if (_landSprites.at(i).getPosition().x < 0 - _landSprites.at(i).getGlobalBounds().width) // проверяем вышел ли фон за рамки
 			{
 				sf::Vector2f position(_data->window.getSize().x, _landSprites.at(i).getPosition().y);
-				_landSprites.at(i).setPosition(position); //???(типо начальные координаты)
+				_landSprites.at(i).setPosition(position); 
 			}
 		}
 	}

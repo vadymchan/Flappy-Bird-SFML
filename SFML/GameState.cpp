@@ -13,9 +13,9 @@ namespace Vadym
 
 	}
 
-	void GameState::Init() // нажали на кнопку запуска - мы внутри
+	void GameState::Init() 
 	{
-		if (!_hitSoundBuffer.loadFromFile(HIT_SOUND_FILEPATH))//???
+		if (!_hitSoundBuffer.loadFromFile(HIT_SOUND_FILEPATH))
 		{
 			std::cout << "Error loading Hit Sound Effect" << std::endl;
 		}
@@ -46,8 +46,8 @@ namespace Vadym
 		_data->assets.LoadFont("Flappy Font", FLAPPY_FONT_FILEPATH);
 
 
-		pipe = new Pipe(_data);//???(их вроде еще и удалить нужно)
-		land = new Land(_data); //вроде как конструктор
+		pipe = new Pipe(_data);
+		land = new Land(_data); 
 		bird = new Bird(_data);
 		flash = new Flash(_data);
 		hud = new HUD(_data);
@@ -57,7 +57,7 @@ namespace Vadym
 		_score = 0;
 		hud->UpdateScore(_score);//так потому что мы можем легко контролить начальное значение счета
 
-		_gameState = GameStates::eReady; //??? вроде пока не нажмешь на кнопку оно не заработает
+		_gameState = GameStates::eReady; 
 		
 
 		
@@ -74,7 +74,7 @@ namespace Vadym
 				_data->window.close();
 			}
 
-			if (_data->input.IsSpriteClicked(_background, sf::Mouse::Left, _data->window)) //??
+			if (_data->input.IsSpriteClicked(_background, sf::Mouse::Left, _data->window)) 
 			{
 				if (GameStates::eGameOver != _gameState) {
 					_gameState = GameStates::ePlaying;
@@ -112,13 +112,13 @@ namespace Vadym
 
 //Collision check
 
-			std::vector <sf::Sprite> landSprites = land->GetSprites();//???
+			std::vector <sf::Sprite> landSprites = land->GetSprites();
 
 			for (int i = 0; i < landSprites.size(); i++)// collision detection
 			{
 				if (collision.CheckSpriteCollision(bird->GetSprite(),0.7f, landSprites.at(i),1.0f))
 				{
-					_gameState = GameStates::eGameOver;; //??? зОчем цикл(проверяем каждый кусок земли на столкновение)
+					_gameState = GameStates::eGameOver;; 
 
 					clock.restart();
 
@@ -140,7 +140,7 @@ namespace Vadym
 				}
 			}
 
-			std::vector<sf::Sprite>& scoringSprites = pipe->GetScoringSprites(); //???почему тут ссылка (чтобы потом было легче удалить вектор)
+			std::vector<sf::Sprite>& scoringSprites = pipe->GetScoringSprites(); 
 
 			for (int i = 0; i < scoringSprites.size(); i++)
 			{
@@ -166,7 +166,7 @@ namespace Vadym
 
 			if (clock.getElapsedTime().asSeconds() > TIME_BEFORE_GAME_OVER_APPEARS)
 			{
-				_data->machine.AddState(StateRef(new GameOverState(_data,_score) ), true); //???
+				_data->machine.AddState(StateRef(new GameOverState(_data,_score) ), true); 
 			}
 		}
 

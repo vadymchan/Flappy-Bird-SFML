@@ -6,7 +6,7 @@ namespace Vadym
 	{
 	public:
 
-		virtual void Init() = 0; //что это???
+		virtual void Init() = 0; 
 
 		virtual void HandleInput() = 0;
 		virtual void Update(float dt) = 0;

@@ -11,11 +11,11 @@ namespace Vadym
 		_animationFrames.push_back(_data->assets.GetTexture("Bird Frame 4"));
 		_birdSprite.setTexture(_animationFrames.at(_animationIterator));
 		_birdSprite.setPosition((_data->window.getSize().x / 4) - (_birdSprite.getGlobalBounds().width / 2),
-			(_data->window.getSize().x / 2) - (_birdSprite.getGlobalBounds().height / 2));//??? что не так с Х
+			(_data->window.getSize().x / 2) - (_birdSprite.getGlobalBounds().height / 2));
 		_birdState = BIRD_STATE_STILL; 
 
 		sf::Vector2f origin = sf::Vector2f(_birdSprite.getGlobalBounds().width / 2,
-			_birdSprite.getGlobalBounds().height / 2); //??? вроде вращение вокруг оси
+			_birdSprite.getGlobalBounds().height / 2); 
 		_birdSprite.setOrigin(origin); // присваиваем центр вращения
 		_rotation = 0;
 
@@ -30,7 +30,7 @@ namespace Vadym
 	{
 		if (_clock.getElapsedTime().asSeconds() > BIRD_ANIMATION_DURATION / _animationFrames.size())
 		{
-			if (_animationIterator < _animationFrames.size() - 1) //??? похож на пример ранее
+			if (_animationIterator < _animationFrames.size() - 1) 
 			{
 				_animationIterator++;
 			}
@@ -38,7 +38,7 @@ namespace Vadym
 			{
 				_animationIterator = 0;
 			}
-			_birdSprite.setTexture(_animationFrames.at(_animationIterator)); //??? вроде меняем картинку
+			_birdSprite.setTexture(_animationFrames.at(_animationIterator)); 
 			_clock.restart();
 		}
 	}

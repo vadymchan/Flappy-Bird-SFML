@@ -16,7 +16,7 @@ namespace Vadym
 	{
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe Up"));
 		sprite.setPosition(_data->window.getSize().x,
-			_data->window.getSize().y - sprite.getGlobalBounds().height - _pipeSpawnYOffset); //???
+			_data->window.getSize().y - sprite.getGlobalBounds().height - _pipeSpawnYOffset);
 		pipeSprites.push_back(sprite);
 
 	}
@@ -24,7 +24,7 @@ namespace Vadym
 	void Pipe::SpawnTopPipe()
 	{
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe Down"));
-		sprite.setPosition(_data->window.getSize().x, -_pipeSpawnYOffset); //почему такой y???
+		sprite.setPosition(_data->window.getSize().x, -_pipeSpawnYOffset); 
 
 		pipeSprites.push_back(sprite);
 	}
@@ -53,7 +53,7 @@ namespace Vadym
 		{
 			if (pipeSprites.at(i).getPosition().x < 0 - pipeSprites.at(i).getGlobalBounds().width)
 			{
-				pipeSprites.erase(pipeSprites.begin() + i); //удаляем трубы(Зачем + i???)
+				pipeSprites.erase(pipeSprites.begin() + i); 
 			}
 			else {
 
@@ -81,7 +81,7 @@ namespace Vadym
 
 	void Pipe::DrawPipes()
 	{
-		for (unsigned short int i = 0; i < pipeSprites.size(); i++) //почему такой тип???
+		for (unsigned short int i = 0; i < pipeSprites.size(); i++) 
 		{
 			_data->window.draw(pipeSprites.at(i));
 		}

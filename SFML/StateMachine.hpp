@@ -1,17 +1,17 @@
 ﻿#pragma once
 
-#include<memory> //???
-#include<stack>  //???
+#include<memory> 
+#include<stack>  
 #include "State.hpp"
 
 namespace Vadym
 {
-	typedef std::unique_ptr<State> StateRef;  //???
+	typedef std::unique_ptr<State> StateRef;  
 
 	class StateMachine
 	{
 	public:
-		StateMachine() {}  // почему здесь нет запятых ???
+		StateMachine() {}  
 		~StateMachine() {}
 
 		void AddState(StateRef newState, bool isReplacing = true);
@@ -22,7 +22,7 @@ namespace Vadym
 		StateRef& GetActiveState();
 
 	private:
-		std::stack<StateRef> _states; //???
+		std::stack<StateRef> _states; 
 		StateRef _newState;
 
 		bool _isRemoving;
